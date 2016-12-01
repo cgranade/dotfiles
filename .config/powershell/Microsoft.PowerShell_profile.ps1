@@ -46,3 +46,10 @@ function which {
         }
     }
 }
+
+## PROMPT ####################################################################
+
+function global:prompt {
+    $git_ps1 = bash -c ". /etc/bash_completion.d/git-prompt && __git_ps1"
+    return ("" + $(Get-Location) + $git_ps1 + "> ")
+}

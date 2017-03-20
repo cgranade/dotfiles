@@ -8,6 +8,7 @@ function config {
 # Configure aliases to point to built-in cmdlets over native commands.
 # We use -ErrorAction Ignore to deal with the case where these
 # aliases may already be defined.
+New-Alias -Name "cp" -Value Copy-Item -ErrorAction Ignore
 New-Alias -Name "ls" -Value Get-ChildItem -ErrorAction Ignore
 New-Alias -Name "mv" -Value Move-Item -ErrorAction Ignore
 New-Alias -Name "rm" -Value Remove-Item -ErrorAction Ignore

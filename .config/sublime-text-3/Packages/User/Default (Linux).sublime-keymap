@@ -1,6 +1,0 @@
-[
-    {
-        "keys": ["ctrl+alt+p"],
-        "command": "prompt_select_workspace"
-    }
-]

@@ -1,0 +1,30 @@
+<Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
+<Multi_key> <dollar> <U>            : "𝑈"   U1D448
+<Multi_key> <dollar> <f>            : "𝑓"   U1D453
+<Multi_key> <dollar> <g>            : "𝑔"   U1D454
+<Multi_key> <dollar> <k>            : "𝑘"   U1D458
+<Multi_key> <dollar> <n>            : "𝑛"   U1D45B
+<Multi_key> <dollar> <r>            : "𝑟"   U1D45F
+<Multi_key> <dollar> <s>            : "𝑠"   U1D460
+<Multi_key> <dollar> <x>            : "𝑥"   U1D465
+<Multi_key> <dollar> <y>            : "𝑦"   U1D466
+<Multi_key> <dollar> <z>            : "𝑧"   U1D467
+
+<Multi_key> <dollar> <1>            : "𝟙"   U1D7D9
+<Multi_key> <less> <asterisk> <3>   : "💖"   U1F496
+
+# Copied from https://github.com/kragen/xcompose/blob/master/dotXCompose
+
+<Multi_key> <at> <at> <less>    :       "❰"     U2770   # HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
+<Multi_key> <at> <at> <greater> :       "❱"     U2771   # HEAVY RIGHT-POINTING ANGLE BRACKET ORNAMENT
+
+<Multi_key> <bar> <braceleft>	 : "⦃" U2983	# LEFT WHITE CURLY BRACKET
+<Multi_key> <bar> <braceright>	 : "⦄" U2984	# RIGHT WHITE CURLY BRACKET 
+<Multi_key> <bar> <bracketleft>	:   "⟦"	U27E6	# MATHEMATICAL LEFT WHITE SQUARE BRACKET
+<Multi_key> <bar> <bracketright>:   "⟧"	U27E7	# MATHEMATICAL RIGHT WHITE SQUARE BRACKET
+<Multi_key> <2> <less> <parenleft> :   "⟪"	U27EA	# MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+<Multi_key> <2> <greater> <parenright>   :   "⟫"	U27EB	# MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+<Multi_key> <7> <apostrophe>	    : "｢"     UFF62   # HALFWIDTH LEFT CORNER BRACKET
+<Multi_key> <L> <apostrophe>	    : "｣"     UFF63   # HALFWIDTH RIGHT CORNER BRACKET
+<Multi_key> <7> <quotedbl>	    : "『"    U300E   # LEFT WHITE CORNER BRACKET
+<Multi_key> <L> <quotedbl>	    : "』"    U300F   # RIGHT WHITE CORNER BRACKET

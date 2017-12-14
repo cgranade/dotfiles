@@ -19,27 +19,29 @@ function Remove-Bom() {
     [System.IO.File]::WriteAllLines($resolved, $contents, $encoding);
 }
 
-if ($Env:ConEmuBuild) {
-    Import-Module -Name oh-my-posh
-    Set-Theme Agnoster
+Import-Module -Name oh-my-posh
+Set-Theme Agnoster
 
-    $oldPrompt = $Function:prompt;
+if ($Env:TERM_COMMAND -eq "vscode") {
+    # Fix for the missing "DarkYellow" color in VS Code.
+    $ThemeSettings.Colors["GitLocalChangesColor"] = "White"
+}
 
-    function prompt() {
-        & $oldPrompt;
+$oldPrompt = $Function:prompt;
 
-        if (Get-Command ConEmuC -ErrorAction SilentlyContinue) {
-            $gitDir = Get-GitDirectory
-            if ($gitDir) {
-                $gitRoot = Resolve-Path (Join-Path $gitDir ..)
-                $tabTitle = "Repo: $(Split-Path -Leaf $gitRoot)"
-            } else {
-                $tabTitle = Split-Path -Leaf (Get-Location)
-            }
+function prompt() {
+    & $oldPrompt;
 
-            ConEmuC -GuiMacro Rename 0 "$tabTitle" > $null 2> $null
-
+    if (Get-Command ConEmuC -ErrorAction SilentlyContinue) {
+        $gitDir = Get-GitDirectory
+        if ($gitDir) {
+            $gitRoot = Resolve-Path (Join-Path $gitDir ..)
+            $tabTitle = "Repo: $(Split-Path -Leaf $gitRoot)"
+        } else {
+            $tabTitle = Split-Path -Leaf (Get-Location)
         }
+
+        ConEmuC -GuiMacro Rename 0 "$tabTitle" > $null 2> $null
 
     }
 

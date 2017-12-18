@@ -22,7 +22,7 @@ function Remove-Bom() {
 Import-Module -Name oh-my-posh
 Set-Theme Agnoster
 
-if ($Env:TERM_COMMAND -eq "vscode") {
+if ($Env:TERM_PROGRAM -eq "vscode") {
     # Fix for the missing "DarkYellow" color in VS Code.
     $ThemeSettings.Colors["GitLocalChangesColor"] = "White"
 }

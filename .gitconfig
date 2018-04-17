@@ -1,5 +1,5 @@
 [user]
-	email = cgranade@cgranade.com
+	email = chgranad@microsoft.com
 	name = Christopher Granade
 [filter "lfs"]
 	clean = git-lfs clean -- %f

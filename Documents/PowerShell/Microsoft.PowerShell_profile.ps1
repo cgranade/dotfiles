@@ -6,7 +6,6 @@ Set-Alias l Get-ChildItemColor -Option AllScope
 Set-Alias ls Get-ChildItemColorFormatWide -Option AllScope
 
 Import-Module posh-git
-Start-SshAgent -Quiet
 
 # Add-PSSnapIn Microsoft.HPC
 

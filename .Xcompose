@@ -1,5 +1,6 @@
 <Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
 <Multi_key> <dollar> <U>            : "𝑈"   U1D448
+<Multi_key> <dollar> <V>            : "𝑉"   U1D449
 <Multi_key> <dollar> <f>            : "𝑓"   U1D453
 <Multi_key> <dollar> <g>            : "𝑔"   U1D454
 <Multi_key> <dollar> <k>            : "𝑘"   U1D458
@@ -28,3 +29,5 @@
 <Multi_key> <L> <apostrophe>	    : "｣"     UFF63   # HALFWIDTH RIGHT CORNER BRACKET
 <Multi_key> <7> <quotedbl>	    : "『"    U300E   # LEFT WHITE CORNER BRACKET
 <Multi_key> <L> <quotedbl>	    : "』"    U300F   # RIGHT WHITE CORNER BRACKET
+
+<Multi_key> <bar> <minus> : "⊢" U22A2 # RIGHT TACK

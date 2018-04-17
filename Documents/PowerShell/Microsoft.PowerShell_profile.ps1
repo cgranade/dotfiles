@@ -1,4 +1,6 @@
-﻿# Ensure that Get-ChildItemColor is loaded
+﻿$simplePrompt = $Function:prompt;
+
+# Ensure that Get-ChildItemColor is loaded
 Import-Module Get-ChildItemColor
 
 # Set l and ls alias to use the new Get-ChildItemColor cmdlets
@@ -26,10 +28,18 @@ if ($Env:TERM_PROGRAM -eq "vscode") {
     $ThemeSettings.Colors["GitLocalChangesColor"] = "White"
 }
 
+$Global:UseFancyPrompt = $true;
+
 $oldPrompt = $Function:prompt;
 
 function prompt() {
-    & $oldPrompt;
+    
+    if ($Global:UseFancyPrompt) {
+        & $oldPrompt;
+    } else {
+        & $simplePrompt;
+    }
+
 
     if (Get-Command ConEmuC -ErrorAction SilentlyContinue) {
         $gitDir = Get-GitDirectory

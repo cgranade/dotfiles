@@ -1,8 +1,11 @@
 <Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
 <Multi_key> <dollar> <U>            : "𝑈"   U1D448
 <Multi_key> <dollar> <V>            : "𝑉"   U1D449
+<Multi_key> <dollar> <d>            : "𝑑"   U1D451
+<Multi_key> <dollar> <e>            : "𝑒"   U1D452
 <Multi_key> <dollar> <f>            : "𝑓"   U1D453
 <Multi_key> <dollar> <g>            : "𝑔"   U1D454
+<Multi_key> <dollar> <i>            : "𝑖"   U1D456
 <Multi_key> <dollar> <k>            : "𝑘"   U1D458
 <Multi_key> <dollar> <n>            : "𝑛"   U1D45B
 <Multi_key> <dollar> <r>            : "𝑟"   U1D45F

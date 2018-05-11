@@ -37,7 +37,12 @@ function prompt() {
     if ($Global:UseFancyPrompt) {
         & $oldPrompt;
     } else {
-        & $simplePrompt;
+        $dirInfo = New-Object -TypeName System.IO.DirectoryInfo -ArgumentList (Get-Location);
+        $baseDir = $dirInfo.Name;
+        Write-Host -NoNewline "PS $baseDir>  "
+        # & $simplePrompt;
+
+        "`b"
     }
 
 

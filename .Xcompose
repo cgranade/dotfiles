@@ -15,6 +15,7 @@
 <Multi_key> <dollar> <z>            : "𝑧"   U1D467
 
 <Multi_key> <dollar> <1>            : "𝟙"   U1D7D9
+<Multi_key> <less> <2> <3>          : "💕" U1F495
 <Multi_key> <less> <asterisk> <3>   : "💖"   U1F496
 
 # Copied from https://github.com/kragen/xcompose/blob/master/dotXCompose

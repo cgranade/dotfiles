@@ -1,4 +1,14 @@
-<Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
+## Emoji #####################################################################
+
+<Multi_key> <less> <2> <3>          : "💕" U1F495
+<Multi_key> <less> <asterisk> <3>   : "💖"   U1F496
+
+## Combining Characters ######################################################
+
+<Multi_key> <backslash> <asciicircum> <asterisk> : "⃰" U20F0 # COMBINING ASTERISK ABOVE
+
+## Mathematical Italic Letters ###############################################
+
 <Multi_key> <dollar> <F>            : "𝐹"   U1D439
 <Multi_key> <dollar> <G>            : "𝐺"   U1D43A
 <Multi_key> <dollar> <S>            : "𝑆"   U1D446
@@ -21,14 +31,17 @@
 <Multi_key> <dollar> <y>            : "𝑦"   U1D466
 <Multi_key> <dollar> <z>            : "𝑧"   U1D467
 
-<Multi_key> <dollar> <1>            : "𝟙"   U1D7D9
-<Multi_key> <less> <2> <3>          : "💕" U1F495
-<Multi_key> <less> <asterisk> <3>   : "💖"   U1F496
+## Blackboard Bold ###########################################################
 
-# Copied from https://github.com/kragen/xcompose/blob/master/dotXCompose
+# FIXME: ♢$1 is inconsistent with the use of ♢$ to indicate math italic.
+<Multi_key> <dollar> <1>            : "𝟙"   U1D7D9
+
+## Misc. Math ################################################################
 
 <Multi_key> <at> <at> <less>    :       "❰"     U2770   # HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
 <Multi_key> <at> <at> <greater> :       "❱"     U2771   # HEAVY RIGHT-POINTING ANGLE BRACKET ORNAMENT
+<Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
+
 
 <Multi_key> <bar> <braceleft>	 : "⦃" U2983	# LEFT WHITE CURLY BRACKET
 <Multi_key> <bar> <braceright>	 : "⦄" U2984	# RIGHT WHITE CURLY BRACKET 

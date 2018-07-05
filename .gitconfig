@@ -1,8 +1,10 @@
+[user]
+	email = chgranad@microsoft.com
+	name = Christopher Granade
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[user]
-	name = Chris Granade
-	email = chgranad@microsoft.com
+[core]
+	excludesfile = ~/.gitignore_global

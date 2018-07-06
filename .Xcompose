@@ -16,6 +16,17 @@
 <Multi_key> <dollar> <E>            : "𝐸"   U1D438
 <Multi_key> <dollar> <F>            : "𝐹"   U1D439
 <Multi_key> <dollar> <G>            : "𝐺"   U1D43A
+<Multi_key> <dollar> <H>            : "𝐻"   U1D43B
+<Multi_key> <dollar> <I>            : "𝐼"   U1D43C
+<Multi_key> <dollar> <J>            : "𝐽"   U1D43D
+<Multi_key> <dollar> <K>            : "𝐾"   U1D43E
+<Multi_key> <dollar> <L>            : "𝐿"   U1D43F
+<Multi_key> <dollar> <M>            : "𝑀"   U1D440
+<Multi_key> <dollar> <N>            : "𝑁"   U1D441
+<Multi_key> <dollar> <O>            : "𝑂"   U1D442
+<Multi_key> <dollar> <P>            : "𝑃"   U1D443
+<Multi_key> <dollar> <Q>            : "𝑄"   U1D444
+<Multi_key> <dollar> <R>            : "𝑅"   U1D445
 <Multi_key> <dollar> <S>            : "𝑆"   U1D446
 <Multi_key> <dollar> <T>            : "𝑇"   U1D447
 <Multi_key> <dollar> <U>            : "𝑈"   U1D448

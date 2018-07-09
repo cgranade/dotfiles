@@ -29,14 +29,14 @@ function Set-TerminalWindowTitle() {
 }
 
 function prompt() {
-    
+
     if ($Global:UseFancyPrompt) {
+        Set-TerminalWindowTitle | Out-Null;
         & $oldPrompt;
     } else {
         $dirInfo = New-Object -TypeName System.IO.DirectoryInfo -ArgumentList (Get-Location);
         $baseDir = $dirInfo.Name;
         Write-Host -NoNewline "PS $baseDir>  "
-        Set-TerminalWindowTitle;
 
         "`b"
     }

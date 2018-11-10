@@ -31,6 +31,10 @@
 <Multi_key> <dollar> <T>            : "𝑇"   U1D447
 <Multi_key> <dollar> <U>            : "𝑈"   U1D448
 <Multi_key> <dollar> <V>            : "𝑉"   U1D449
+<Multi_key> <dollar> <W>            : "𝑊"   U1D44A
+<Multi_key> <dollar> <X>            : "𝑋"   U1D44B
+<Multi_key> <dollar> <Y>            : "𝑌"   U1D44C
+<Multi_key> <dollar> <Z>            : "𝑍"   U1D44D
 <Multi_key> <dollar> <a>            : "𝑎"   U1D44E
 <Multi_key> <dollar> <b>            : "𝑏"   U1D44F
 <Multi_key> <dollar> <c>            : "𝑐"   U1D450
@@ -76,3 +80,7 @@
 <Multi_key> <L> <quotedbl>	    : "』"    U300F   # RIGHT WHITE CORNER BRACKET
 
 <Multi_key> <bar> <minus> : "⊢" U22A2 # RIGHT TACK
+
+## Other stuff ###############################################################
+
+<Multi_key> <c> <m> <d> : "⌘"U2318 # COMMAND KEY SYMBOL

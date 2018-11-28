@@ -1,5 +1,5 @@
 {
-  "Hotkey": "Ctrl + Shift + Space",
+  "Hotkey": "Ctrl + Alt + Space",
   "Language": "en",
   "Theme": "Pink",
   "QueryBoxFont": "Segoe UI",
@@ -14,7 +14,7 @@
   "WindowLeft": 880.0,
   "WindowTop": 338.5,
   "MaxResultsToShow": 6,
-  "ActivateTimes": 29,
+  "ActivateTimes": 48,
   "CustomPluginHotkeys": [],
   "Opacity": 1.0,
   "OpacityMode": 0,

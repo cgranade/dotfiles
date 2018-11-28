@@ -134,3 +134,9 @@ if ($IsWindows) {
     }
 
 }
+
+#region conda initialize
+# !! Contents within this block are managed by 'conda init' !!
+(& C:\Users\chgranad.REDMOND\Source\Repos\conda\devenv\Scripts\conda.exe shell.powershell hook) | Out-String | Invoke-Expression
+#endregion
+

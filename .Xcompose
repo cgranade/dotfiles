@@ -45,6 +45,7 @@
 # See https://stackoverflow.com/q/47206070/267841 for why this one breaks the pattern.
 <Multi_key> <dollar> <h>            : "ℎ"   U210E
 <Multi_key> <dollar> <i>            : "𝑖"   U1D456
+<Multi_key> <dollar> <j>            : "𝑗"   U1D457
 <Multi_key> <dollar> <k>            : "𝑘"   U1D458
 <Multi_key> <dollar> <l>            : "𝑙"   U1D459
 <Multi_key> <dollar> <m>            : "𝑚"   U1D45A

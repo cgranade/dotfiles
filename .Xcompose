@@ -54,6 +54,10 @@
 <Multi_key> <dollar> <q>            : "𝑞"   U1D45E
 <Multi_key> <dollar> <r>            : "𝑟"   U1D45F
 <Multi_key> <dollar> <s>            : "𝑠"   U1D460
+<Multi_key> <dollar> <t>            : "𝑡"   U1D461 
+<Multi_key> <dollar> <u>            : "𝑢"   U1D462
+<Multi_key> <dollar> <v>            : "𝑣"   U1D463
+<Multi_key> <dollar> <w>            : "𝑤"   U1D464
 <Multi_key> <dollar> <x>            : "𝑥"   U1D465
 <Multi_key> <dollar> <y>            : "𝑦"   U1D466
 <Multi_key> <dollar> <z>            : "𝑧"   U1D467

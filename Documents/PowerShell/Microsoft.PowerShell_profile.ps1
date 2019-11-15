@@ -135,8 +135,9 @@ if ($IsWindows) {
 
 }
 
-#region conda initialize
-# !! Contents within this block are managed by 'conda init' !!
-(& C:\Users\chgranad.REDMOND\Source\Repos\conda\devenv\Scripts\conda.exe shell.powershell hook) | Out-String | Invoke-Expression
-#endregion
-
+# If there exists a conda profile, add it now.
+# This is a nonstandard way of using conda init, but it lets us more easily
+# include conda support in the dotfiles repo.
+if (Test-Path ~/.conda-profile.ps1) {
+    & ~/.conda-profile.ps1;
+}

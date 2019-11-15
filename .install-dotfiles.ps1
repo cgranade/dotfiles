@@ -1,4 +1,4 @@
-#!/usr/bin/env pwsh - -NoProfile
+#!/usr/bin/env pwsh
 
 # Install dependencies.
 $Dependencies = @(

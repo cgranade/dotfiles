@@ -108,23 +108,29 @@ if ($IsLinux -or $IsMacOS) {
 
 
 if ($IsWindows) {
+    # Check if we're running in ConEmu.
+    if ($null -ne $Env:ConEmuPID) {
+        $IsConEmu = $true;
+        Remove-Item function:/Set-TerminalWindowTitle
 
-    Remove-Item function:/Set-TerminalWindowTitle
+        function Set-TerminalWindowTitle() {
+            if (Get-Command ConEmuC -ErrorAction SilentlyContinue) {
+                $gitDir = Get-GitDirectory
+                if ($gitDir) {
+                    $gitRoot = Resolve-Path (Join-Path $gitDir ..)
+                    $tabTitle = "Repo: $(Split-Path -Leaf $gitRoot)"
+                } else {
+                    $tabTitle = Split-Path -Leaf (Get-Location)
+                }
 
-    function Set-TerminalWindowTitle() {
-        if (Get-Command ConEmuC -ErrorAction SilentlyContinue) {
-            $gitDir = Get-GitDirectory
-            if ($gitDir) {
-                $gitRoot = Resolve-Path (Join-Path $gitDir ..)
-                $tabTitle = "Repo: $(Split-Path -Leaf $gitRoot)"
-            } else {
-                $tabTitle = Split-Path -Leaf (Get-Location)
+                ConEmuC -GuiMacro Rename 0 "$tabTitle" > $null 2> $null
+
             }
+        }   
+    } else {
+        $IsConEmu = $false;
+    }
 
-            ConEmuC -GuiMacro Rename 0 "$tabTitle" > $null 2> $null
-
-        }
-    }   
 
 
     # Chocolatey profile
@@ -135,8 +141,10 @@ if ($IsWindows) {
 
 }
 
-#region conda initialize
-# !! Contents within this block are managed by 'conda init' !!
-(& C:\Users\chgranad.REDMOND\Source\Repos\conda\devenv\Scripts\conda.exe shell.powershell hook) | Out-String | Invoke-Expression
-#endregion
-
+## CONDA CONFIG ##############################################################
+# Since this is machine specific, we store our conda config in a
+# ~/.conda.ps1 file rather than the default.
+$CondaPath = (Resolve-Path ~/.conda.ps1);
+if (Test-Path $CondaPath) {
+    . $CondaPath;
+}

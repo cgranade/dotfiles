@@ -43,6 +43,25 @@ function prompt() {
 
 }
 
+## SUGGESTION ENGINES ########################################################
+
+# dotnet suggest shell start
+$availableToComplete = (dotnet-suggest list) | Out-String
+$availableToCompleteArray = $availableToComplete.Split([Environment]::NewLine, [System.StringSplitOptions]::RemoveEmptyEntries)
+
+
+    Register-ArgumentCompleter -Native -CommandName $availableToCompleteArray -ScriptBlock {
+        param($commandName, $wordToComplete, $cursorPosition)
+        $fullpath = (Get-Command $wordToComplete.CommandElements[0]).Source
+
+        $arguments = $wordToComplete.Extent.ToString().Replace('"', '\"')
+        dotnet-suggest get -e $fullpath --position $cursorPosition -- "$arguments" | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+    }
+$env:DOTNET_SUGGEST_SCRIPT_VERSION = "1.0.0"
+# dotnet suggest script end
+
 ## COMMANDS ##################################################################
 
 function Remove-Bom() {
@@ -141,10 +160,9 @@ if ($IsWindows) {
 
 }
 
-## CONDA CONFIG ##############################################################
-# Since this is machine specific, we store our conda config in a
-# ~/.conda.ps1 file rather than the default.
-$CondaPath = (Resolve-Path ~/.conda.ps1);
-if (Test-Path $CondaPath) {
-    . $CondaPath;
+# If there exists a conda profile, add it now.
+# This is a nonstandard way of using conda init, but it lets us more easily
+# include conda support in the dotfiles repo.
+if (Test-Path ~/.conda-profile.ps1) {
+    . ~/.conda-profile.ps1;
 }

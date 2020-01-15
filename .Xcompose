@@ -92,3 +92,4 @@
 
 <Multi_key> <c> <m> <d> : "⌘"U2318 # COMMAND KEY SYMBOL
 <Multi_key> <q> <d> <k> : "Quantum Development Kit"
+<Multi_key> <m> <q> : "Microsoft.Quantum."

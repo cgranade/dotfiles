@@ -19,3 +19,9 @@ Install-GitDotfiles -Uri $RepoPath;
 # manually.
 Invoke-GitDotfiles remote set-url origin https://github.com/cgranade/dotfiles.git
 Invoke-GitDotfiles remote add bootstrap $RepoPath
+
+# If the .NET Core SDK is available, but not dotnet-suggest,
+# go on and add suggestion support.
+if ((Get-Command dotnet -ErrorAction SilentlyContinue) -and -not (Get-Command dotnet-suggest -ErrorAction SilentlyContinue)) {
+    dotnet tool install --global dotnet-suggest
+}

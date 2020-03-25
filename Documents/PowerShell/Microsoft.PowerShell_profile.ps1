@@ -9,8 +9,9 @@ Import-Module Get-ChildItemColor
     Set-Alias l Get-ChildItemColor -Option AllScope
     Set-Alias ls Get-ChildItemColorFormatWide -Option AllScope
 
-Import-Module -Name oh-my-posh
-    Set-Theme Agnoster
+Import-Module -Name oh-my-posh;
+    Set-Theme Agnoster;
+    $global:ThemeSettings.PromptSymbols.VirtualEnvSymbol = "⚙️";
 
 
 if ($Env:TERM_PROGRAM -eq "vscode") {

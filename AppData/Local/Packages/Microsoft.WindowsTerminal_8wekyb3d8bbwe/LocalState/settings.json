@@ -176,26 +176,40 @@
     },
     "profiles": {
         "defaults": {
-            "fontFace": "Cascadia Code PL"
+            "fontFace": "Cascadia Code PL",
+            "startingDirectory": "%USERPROFILE%",
+            "useAcrylic": true,
+            "closeOnExit": true,
+            "fontSize": 10,
+            "historySize": 9001,
+            "padding": "0, 0, 0, 0",
+            "snapOnInput": true
         },
         "list": [
             {
                 "acrylicOpacity": 0.40000000596046448,
-                "closeOnExit": true,
                 "colorScheme": "Vaporwave",
-                "commandline": "C:\\Program Files\\PowerShell\\7-preview\\pwsh.exe",
+                "backgroundImageOpacity": 0.2,
+                "backgroundImage": "%USERPROFILE%\\hell-yeah-qsharp.gif",
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
                 "cursorColor": "#FFFFFF",
-                "cursorShape": "bar",
-                "fontSize": 10,
+                "cursorShape": "vintage",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "historySize": 9001,
                 "icon": "ms-appx:///ProfileIcons/{574e775e-4f2a-5b96-ac1e-a2962a402336}.png",
                 "name": "PowerShell Core",
-                "padding": "0, 0, 0, 0",
-                "snapOnInput": true,
-                "startingDirectory": "%USERPROFILE%",
-                "useAcrylic": true,
-                "experimental.retroTerminalEffect": true
+                "experimental.retroTerminalEffect": false
+            },
+            {
+                "acrylicOpacity": 0.40000000596046448,
+                "colorScheme": "Vaporwave",
+                "commandline": "pwsh.exe -NoExit -Command \"$global:DefaultUser = 'default'; $global:ThemeSettings.CurrentUser = 'default';\"",
+                "cursorColor": "#FFFFFF",
+                "cursorShape": "vintage",
+                "guid": "{fd015c60-9666-4ccd-9ab2-0a3ff0f9ef74}",
+                "icon": "ms-appx:///ProfileIcons/{574e775e-4f2a-5b96-ac1e-a2962a402336}.png",
+                "name": "PowerShell Core (presentation mode)",
+                "experimental.retroTerminalEffect": false,
+                "fontSize": 18
             },
             {
                 "acrylicOpacity": 0.5,
@@ -253,6 +267,24 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{d6ebd50a-738a-58da-95a8-41e7782f6f7e}",
+                "hidden": false,
+                "name": "PowerShell 7 Preview (x86)",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{049b895c-b0b8-55de-bce3-27d3220d7ab3}",
+                "hidden": false,
+                "name": "PowerShell Core 6",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{a3a2e83a-884a-5379-baa8-16f193a13b21}",
+                "hidden": false,
+                "name": "PowerShell 7 Preview",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },

@@ -4,11 +4,6 @@ Import-Module PSGitDotfiles
 
 Import-Module posh-git
 
-Import-Module Get-ChildItemColor
-    # Set l and ls alias to use the new Get-ChildItemColor cmdlets
-    Set-Alias l Get-ChildItemColor -Option AllScope
-    Set-Alias ls Get-ChildItemColorFormatWide -Option AllScope
-
 Import-Module -Name oh-my-posh;
     Set-Theme Agnoster;
     $global:ThemeSettings.PromptSymbols.VirtualEnvSymbol = "⚙️";

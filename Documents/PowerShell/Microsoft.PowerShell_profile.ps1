@@ -4,40 +4,12 @@ Import-Module PSGitDotfiles
 
 Import-Module posh-git
 
-Import-Module -Name oh-my-posh;
-    Set-Theme Agnoster;
-    $global:ThemeSettings.PromptSymbols.VirtualEnvSymbol = "⚙️";
-
-
-if ($Env:TERM_PROGRAM -eq "vscode") {
-    # Fix for the missing "DarkYellow" color in VS Code.
-    $ThemeSettings.Colors["GitLocalChangesColor"] = "White"
-}
-
-## PROMPT ####################################################################
-
-$Global:UseFancyPrompt = $true;
-
-$oldPrompt = $Function:prompt;
 
 function Set-TerminalWindowTitle() {
     # pass, we'll override in OS-specific sections below.
 }
 
-function prompt() {
 
-    if ($Global:UseFancyPrompt) {
-        Set-TerminalWindowTitle | Out-Null;
-        & $oldPrompt;
-    } else {
-        $dirInfo = New-Object -TypeName System.IO.DirectoryInfo -ArgumentList (Get-Location);
-        $baseDir = $dirInfo.Name;
-        Write-Host -NoNewline "PS $baseDir>  "
-
-        "`b"
-    }
-
-}
 
 ## SUGGESTION ENGINES ########################################################
 
@@ -104,6 +76,57 @@ function which {
     }
 }
 
+# If https://github.com/Matt-Gleich/fgh is installed, use that to define
+# some new aliases for jumping around to different repos.
+# TODO: provide tab completion using technique at https://github.com/conda/conda/blob/master/conda/shell/condabin/Conda.psm1#L188.
+if ((Get-Command -ErrorAction SilentlyContinue fgh)) {
+    function Set-LocationToRepo() {
+        param(
+            [string]
+            $RepoName
+        )
+
+        $path = fgh ls $RepoName;
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Failed to find $RepoName."; 
+        } else {
+            Set-Location -Path $path;
+        }
+    }
+
+    function Push-LocationToRepo() {
+        param(
+            [string]
+            $RepoName
+        )
+
+        $path = fgh ls $RepoName;
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Failed to find $RepoName."; 
+        } else {
+            Push-Location -Path $path;
+        }
+    }
+
+    function Invoke-CodeOnRepo() {
+        param(
+            [string]
+            $RepoName
+        )
+
+        $path = fgh ls $RepoName;
+        if ($LASTEXITCODE -ne 0) {
+            Write-Error "Failed to find $RepoName."; 
+        } else {
+            code $path;
+        }
+    }
+
+    New-Alias -Name "fcd" -Value Set-LocationToRepo;
+    New-Alias -Name "pushr" -Value Push-LocationToRepo;
+    New-Alias -Name "icr" -Value Invoke-CodeOnRepo;
+}
+
 ## *IX-SPECIFIC ##############################################################
 
 if ($IsLinux -or $IsMacOS) {
@@ -161,4 +184,54 @@ if ($IsWindows) {
 # include conda support in the dotfiles repo.
 if (Test-Path ~/.conda-profile.ps1) {
     . ~/.conda-profile.ps1;
+}
+
+## PROMPT ####################################################################
+# We customize the prompt last to prevent conda from clobbering it.
+
+# If starship.rs is available use it instead of oh-my-posh to get cross-shell
+# support.
+
+# Whichever prompt engine we use, though, save its prompt function out so that
+# we can disable it using $UseFancyPrompt.
+if ((Get-Command -ErrorAction SilentlyContinue starship)) {
+    Write-Host "Using starship.rs...";
+    $ENV:STARSHIP_CONFIG = Join-Path (Resolve-Path "~") ".starship";
+
+    $starshipInit = @(starship init powershell --print-full-init) -join "`n";
+    Invoke-Expression ($starshipInit -replace "global:prompt", "starshipPrompt");
+    $oldPrompt = $Function:starshipPrompt;
+} else {
+    Write-Host "Using oh-my-posh...";
+    
+    Import-Module -Name oh-my-posh;
+    Set-Theme Agnoster;
+
+    $oldPrompt = $Function:prompt;
+    
+    if ($Env:TERM_PROGRAM -eq "vscode") {
+        # Fix for the missing "DarkYellow" color in VS Code.
+        $ThemeSettings.Colors["GitLocalChangesColor"] = "White"
+    } else {
+        # VS Code's integrated terminal does not like the ⚙️ emoji.
+        $global:ThemeSettings.PromptSymbols.VirtualEnvSymbol = "⚙️";
+    }
+
+}
+
+$Global:UseFancyPrompt = $true;
+
+function prompt {
+    if ($Global:UseFancyPrompt) {
+        Set-TerminalWindowTitle | Out-Null;
+        & $oldPrompt;
+    } else {
+        # Fall back to a simple prompt for use in demos and presentations.
+        $dirInfo = New-Object -TypeName System.IO.DirectoryInfo -ArgumentList (Get-Location);
+        $baseDir = $dirInfo.Name;
+        Write-Host -NoNewline "PS $baseDir>  "
+
+        "`b"
+    }
+
 }

@@ -1,0 +1,10 @@
+[user]
+	email = cgranade@cgranade.com
+	name = Cassandra Granade
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	excludesfile = ~/.gitignore_global

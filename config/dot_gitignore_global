@@ -1,0 +1,14 @@
+# To activate this config file, run the following:
+# $ git config --global core.excludesfile ~/.gitignore_global
+
+## TeX #######################################################################
+
+*.aux
+*.bbl
+*.out
+*Notes.bib
+*.blg
+*.synctex.gz
+*.synctex.gz(busy)
+*.fdb_latexmk
+*.fls

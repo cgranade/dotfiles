@@ -1,0 +1,103 @@
+## Emoji #####################################################################
+
+<Multi_key> <less> <2> <3>          : "💕" U1F495
+<Multi_key> <less> <asterisk> <3>   : "💖"   U1F496
+
+## Combining Characters ######################################################
+
+<Multi_key> <backslash> <asciicircum> <asterisk> : "⃰" U20F0 # COMBINING ASTERISK ABOVE
+
+## Mathematical Italic Letters ###############################################
+
+<Multi_key> <dollar> <A>            : "𝐴"   U1D434
+<Multi_key> <dollar> <B>            : "𝐵"   U1D435
+<Multi_key> <dollar> <C>            : "𝐶"   U1D436
+<Multi_key> <dollar> <D>            : "𝐷"   U1D437
+<Multi_key> <dollar> <E>            : "𝐸"   U1D438
+<Multi_key> <dollar> <F>            : "𝐹"   U1D439
+<Multi_key> <dollar> <G>            : "𝐺"   U1D43A
+<Multi_key> <dollar> <H>            : "𝐻"   U1D43B
+<Multi_key> <dollar> <I>            : "𝐼"   U1D43C
+<Multi_key> <dollar> <J>            : "𝐽"   U1D43D
+<Multi_key> <dollar> <K>            : "𝐾"   U1D43E
+<Multi_key> <dollar> <L>            : "𝐿"   U1D43F
+<Multi_key> <dollar> <M>            : "𝑀"   U1D440
+<Multi_key> <dollar> <N>            : "𝑁"   U1D441
+<Multi_key> <dollar> <O>            : "𝑂"   U1D442
+<Multi_key> <dollar> <P>            : "𝑃"   U1D443
+<Multi_key> <dollar> <Q>            : "𝑄"   U1D444
+<Multi_key> <dollar> <R>            : "𝑅"   U1D445
+<Multi_key> <dollar> <S>            : "𝑆"   U1D446
+<Multi_key> <dollar> <T>            : "𝑇"   U1D447
+<Multi_key> <dollar> <U>            : "𝑈"   U1D448
+<Multi_key> <dollar> <V>            : "𝑉"   U1D449
+<Multi_key> <dollar> <W>            : "𝑊"   U1D44A
+<Multi_key> <dollar> <X>            : "𝑋"   U1D44B
+<Multi_key> <dollar> <Y>            : "𝑌"   U1D44C
+<Multi_key> <dollar> <Z>            : "𝑍"   U1D44D
+<Multi_key> <dollar> <a>            : "𝑎"   U1D44E
+<Multi_key> <dollar> <b>            : "𝑏"   U1D44F
+<Multi_key> <dollar> <c>            : "𝑐"   U1D450
+<Multi_key> <dollar> <d>            : "𝑑"   U1D451
+<Multi_key> <dollar> <e>            : "𝑒"   U1D452
+<Multi_key> <dollar> <f>            : "𝑓"   U1D453
+<Multi_key> <dollar> <g>            : "𝑔"   U1D454
+# See https://stackoverflow.com/q/47206070/267841 for why this one breaks the pattern.
+<Multi_key> <dollar> <h>            : "ℎ"   U210E
+<Multi_key> <dollar> <i>            : "𝑖"   U1D456
+<Multi_key> <dollar> <j>            : "𝑗"   U1D457
+<Multi_key> <dollar> <k>            : "𝑘"   U1D458
+<Multi_key> <dollar> <l>            : "𝑙"   U1D459
+<Multi_key> <dollar> <m>            : "𝑚"   U1D45A
+<Multi_key> <dollar> <n>            : "𝑛"   U1D45B
+<Multi_key> <dollar> <o>            : "𝑜"   U1D45C
+<Multi_key> <dollar> <p>            : "𝑝"   U1D45D
+<Multi_key> <dollar> <q>            : "𝑞"   U1D45E
+<Multi_key> <dollar> <r>            : "𝑟"   U1D45F
+<Multi_key> <dollar> <s>            : "𝑠"   U1D460
+<Multi_key> <dollar> <t>            : "𝑡"   U1D461
+<Multi_key> <dollar> <u>            : "𝑢"   U1D462
+<Multi_key> <dollar> <v>            : "𝑣"   U1D463
+<Multi_key> <dollar> <w>            : "𝑤"   U1D464
+<Multi_key> <dollar> <x>            : "𝑥"   U1D465
+<Multi_key> <dollar> <y>            : "𝑦"   U1D466
+<Multi_key> <dollar> <z>            : "𝑧"   U1D467
+
+## Blackboard Bold ###########################################################
+
+# FIXME: ♢$1 is inconsistent with the use of ♢$ to indicate math italic.
+<Multi_key> <dollar> <1>            : "𝟙"   U1D7D9
+<Multi_key> <dollar> <dollar> <E>   : "𝔼"   U1D53C
+<Multi_key> <dollar> <dollar> <R>   : "ℝ"   U211D
+<Multi_key> <dollar> <dollar> <V>   : "𝕍"   U1D54D
+
+## Misc. Math ################################################################
+
+<Multi_key> <at> <at> <less>    :       "❰"     U2770   # HEAVY LEFT-POINTING ANGLE BRACKET ORNAMENT
+<Multi_key> <at> <at> <greater> :       "❱"     U2771   # HEAVY RIGHT-POINTING ANGLE BRACKET ORNAMENT
+<Multi_key> <bar> <Right>           : "↦"   U21A6       # RIGHTWARDS ARROW FROM BAR
+
+
+<Multi_key> <bar> <braceleft>	 : "⦃" U2983	# LEFT WHITE CURLY BRACKET
+<Multi_key> <bar> <braceright>	 : "⦄" U2984	# RIGHT WHITE CURLY BRACKET 
+<Multi_key> <bar> <bracketleft>	:   "⟦"	U27E6	# MATHEMATICAL LEFT WHITE SQUARE BRACKET
+<Multi_key> <bar> <bracketright>:   "⟧"	U27E7	# MATHEMATICAL RIGHT WHITE SQUARE BRACKET
+<Multi_key> <2> <less> <parenleft> :   "⟪"	U27EA	# MATHEMATICAL LEFT DOUBLE ANGLE BRACKET
+<Multi_key> <2> <greater> <parenright>   :   "⟫"	U27EB	# MATHEMATICAL RIGHT DOUBLE ANGLE BRACKET
+<Multi_key> <7> <apostrophe>	    : "｢"     UFF62   # HALFWIDTH LEFT CORNER BRACKET
+<Multi_key> <L> <apostrophe>	    : "｣"     UFF63   # HALFWIDTH RIGHT CORNER BRACKET
+<Multi_key> <7> <quotedbl>	    : "『"    U300E   # LEFT WHITE CORNER BRACKET
+<Multi_key> <L> <quotedbl>	    : "』"    U300F   # RIGHT WHITE CORNER BRACKET
+
+<Multi_key> <bar> <minus> : "⊢" U22A2 # RIGHT TACK
+
+## Other stuff ###############################################################
+
+<Multi_key> <c> <m> <d> : "⌘"U2318 # COMMAND KEY SYMBOL
+
+## FFXIV keys ################################################################
+
+<Multi_key> <h> <q> : "" UE03C # High quality symbol
+<Multi_key> <l> <v> : "" UE06A # Lv ligature / icon
+<Multi_key> <bracketleft> <question> <bracketright> : "" UE070 # Question mark square
+<Multi_key> <g> <i> <l> : "" UE049 # Gil icon

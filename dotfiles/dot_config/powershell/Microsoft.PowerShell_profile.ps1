@@ -8,7 +8,7 @@ Import-Module DockerCompletion
 ## ENVIRONMENT VARIABLES #####################################################
 # I forget where I found this hack, somewhere deep in my pwsh snippets...
 ( `
-    Get-Content /home/cgranade/.env.json | `
+    Get-Content (Resolve-Path ~/.env.json) | `
     ConvertFrom-Json -AsHashtable `
 ).GetEnumerator() `
 | ForEach-Object { Set-Item -Path "Env:$($_.Name)" -Value $_.Value }

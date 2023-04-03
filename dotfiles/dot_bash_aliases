@@ -1,0 +1,6 @@
+# Hack to get Ubuntu to read environment variables w/o
+# a re-login.
+PATH="$HOME/.dotnet/tools:$PATH"
+eval "$(cat ~/.env.json | jq --raw-output 'to_entries | map(["export ", .["key"], "=", .["value"]] | join("")) | join("\n")')"
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"

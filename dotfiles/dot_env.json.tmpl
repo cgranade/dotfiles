@@ -1,0 +1,29 @@
+{{- /*
+    There's no single standard way of parsing env files that works
+    on a reasonably wide subset of shells without additional
+    dependencies, so we roll our own as a JSON file.
+
+    This corresponds nicely to nushell's load-env, so no more
+    work is needed there.
+
+    On PowerShell, at least ConvertFrom-Json is built-in, but
+    you have to juggle hashtables and custom objects. For some
+    reason.
+
+    On Bash, you basically have to give up and use a different
+    tool. Thankfully, jq is common enough we can pretty much
+    assume it and use its join filter to turn a JSON file
+    into something eval can work with.
+
+    The upshot is that this file gives us the ability to set
+    environment variables on a per-OS basis that apply across
+    multiple shells, if we have a matching bit of logic in each
+    shell profile.
+*/ -}}
+{
+    {{ if eq .chezmoi.os "linux" }}
+    "GCM_CREDENTIAL_STORE": "gpg",
+    {{ end }}
+    "DOTNET_CLI_TELEMETRY_OPTOUT": "true",
+    "POWERSHELL_TELEMETRY_OPTOUT": "true"
+}

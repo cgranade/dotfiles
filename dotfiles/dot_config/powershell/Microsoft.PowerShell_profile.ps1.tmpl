@@ -62,7 +62,7 @@ function which {
 
 ## *IX-SPECIFIC ##############################################################
 
-if ($IsLinux -or $IsMacOS) {
+{{ if eq .chezmoi.os "linux" }}
 
     # Configure aliases to point to built-in cmdlets over native commands.
     # We use -ErrorAction Ignore to deal with the case where these
@@ -73,7 +73,9 @@ if ($IsLinux -or $IsMacOS) {
     New-Alias -Name "rm" -Value Remove-Item -ErrorAction Ignore
     New-Alias -Name "rmdir" -Value Remove-Item -ErrorAction Ignore
 
-}
+    $env:PATH = "$HOME/.dotnet/tools:${env:PATH}:$HOME/.local/bin";
+
+{{ end }}
 
 ## WINDOWS-SPECIFIC ##########################################################
 

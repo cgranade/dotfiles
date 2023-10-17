@@ -22,7 +22,7 @@
 */ -}}
 {
     {{ if eq .chezmoi.os "linux" }}
-    "GCM_CREDENTIAL_STORE": "gpg",
+    "GCM_CREDENTIAL_STORE": "secretservice",
     {{ end }}
     "DOTNET_CLI_TELEMETRY_OPTOUT": "true",
     "POWERSHELL_TELEMETRY_OPTOUT": "true"

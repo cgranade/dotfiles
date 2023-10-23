@@ -4,3 +4,21 @@ PATH="$HOME/.dotnet/tools:$HOME/.local/bin:$PATH"
 eval "$(cat ~/.env.json | jq --raw-output 'to_entries | map(["export ", .["key"], "=", .["value"]] | join("")) | join("\n")')"
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+
+# This is very far from an alias, but we can't put this in ~/.bashrc in a way that's portable across machines, so we
+# put delegation to nushell here.
+# Use the trick at https://superuser.com/a/560732
+# to start nu whenever something tries to start bash interactively,
+# but only the first time --- that way, we can explicitly drop into
+# bash from nu.
+# if this is an interactive shell
+if [[ $- == *i* ]]; then
+    # if there is actually a nu command available
+    if [[ -x `which nu 2>/dev/null` ]]; then
+        # avoid spawning nu every time bash is started...
+        if [ -z $NU_STARTED ]; then
+            export NU_STARTED="true"
+            exec nu
+        fi
+    fi
+fi

@@ -1,32 +1,6 @@
-def "with flag" [
-    name: string
-    value?: any
-] {
-    if ($value | describe) == "bool" and $value {
-        $in
-        | append $"--($name)"
-    } else if ($value | describe) == "bool" and (not $value) {
-        $in
-    } else if ($value | describe) == "nothing" {
-        $in
-    } else {
-        $in
-        | append $"--($name) ($value)"
-    }
-}
+use "./utils.nu" *
 
-export def "maybe apply" [
-    cond: bool
-    closure: closure
-] {
-    if $cond {
-        $in | do $closure
-    } else {
-        $in
-    }
-}
-
-export extern-wrapped "keepassxc-cli show" [
+export extern-wrapped "show" [
     --quiet (-q)
     --key-file (-k): string
     --no-password
@@ -62,7 +36,7 @@ export extern-wrapped "keepassxc-cli show" [
         let attributes = $output.0
             | each {|row|
                 $row
-                | split row ":"
+                | split row -n 2 ":"
                 | each {|i| $i | str trim}
             }
             | reduce --fold {} {|it, acc|
@@ -79,7 +53,7 @@ export extern-wrapped "keepassxc-cli show" [
             $output.1
             | each {|row|
                 let parts = $row
-                | split row "("
+                | split row -n 2 "("
                 | each {|i| $i | str trim}
                 let size = $parts.1
                     | str trim -r -c ')'

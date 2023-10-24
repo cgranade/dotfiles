@@ -15,3 +15,7 @@
 	helper = /usr/local/bin/git-credential-manager
 	credentialStore = secretservice
 	{{ end }}
+[pull]
+	rebase = false
+[credential "{{ (keepassxc "Development/Retainer Vocate").URL }}"]
+    provider = generic

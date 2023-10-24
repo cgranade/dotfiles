@@ -1,0 +1,10 @@
+[edit]
+command = "codium"
+
+[cd]
+command = "nu"
+
+# We use the keyring only once, so that we can use keepassxc
+# without committing the name of the database to a public repo.
+[keepassxc]
+database = {{ keyring "keepassxc" "database" | quote}}

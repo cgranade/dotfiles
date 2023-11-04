@@ -1,5 +1,5 @@
 use "./gh.nu"
-export use "./utils.nu" [config]
+export use "./utils.nu" [config retry]
 
 
 # TODO: Set up config file instead of random env vars.
@@ -25,7 +25,7 @@ export def "clone all gh" [
     $repos_to_backup
     | each {|r|
           let r_name = $"($r.owner)/($r.name)"
-          let r_path = repos path gh
+          let r_path = path gh
               | path join $r_name
           if ($r_path | path exists) {
               {repo: $r_name status: "Path exists, no clone needed."}
@@ -45,7 +45,7 @@ export def "push all backups for" [
     kind: string
     --limit: int = 200
 ] {
-    let repos_to_backup = ls -f (repos path $kind)
+    let repos_to_backup = ls -f (path $kind)
         | where type == dir
         | each {|i| ls -f $i.name | where type == dir}
         | flatten
@@ -63,7 +63,10 @@ export def "push all backups for" [
                 }
             if ("backup" in $remotes.name) and ("origin" in $remotes.name) {
                 git fetch origin
-                git push --mirror backup
+                # This can fail, so we make sure to use retry here.
+                (retry 5 
+                       {|| git push --mirror backup}
+                       {|| print $"git push failed ($in) times, retrying."})
             } else {
                 print "Skipping, as repo is missing either backup or origin."
             }

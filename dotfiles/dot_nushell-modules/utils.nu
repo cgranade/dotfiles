@@ -35,3 +35,20 @@ export def "config" [] {
         {}
     }
 }
+
+export def "retry" [
+    times: int
+    task: closure
+    on_failure?: closure
+] {
+    mut n = 0
+    mut succeeded = false
+    while ($n < $times) and (not $succeeded) {
+        
+        $succeeded = $env.LAST_EXIT_CODE == 0
+        $n += 1
+        if (not $succeeded) and ($on_failure != null) {
+            $n | do $on_failure
+        }
+    }
+}

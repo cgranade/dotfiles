@@ -1,5 +1,4 @@
 # Nushell Config File
-# foo
 
 module completions {
   # Custom completions for external commands (those outside of Nushell)
@@ -656,6 +655,30 @@ $env.config = {
     }
   ]
 }
+
+
+# Add support for direnv, as that can be quite useful for nix
+# as well as Python environments. This should probably be in
+# env, as it changes behaviour, but it needs to modify config
+# and thus has to run after config.
+# https://www.nushell.sh/cookbook/direnv.html
+$env.config.hooks.pre_prompt = [{ ||
+  let direnv = (direnv export json | from json | default {})
+  if ($direnv | is-empty) {
+      return
+  }
+  $direnv
+  | items {|key, value|
+      {
+        key: $key
+        value: (if $key in $env.ENV_CONVERSIONS {
+          do ($env.ENV_CONVERSIONS | get $key | get from_string) $value
+        } else {
+            $value
+        })
+      }
+  } | transpose -ird | load-env
+}]
 
 source ~/.cache/starship/init.nu
 source ~/.cache/zoxide.nu

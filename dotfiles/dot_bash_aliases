@@ -16,7 +16,7 @@ if [[ $- == *i* ]]; then
     # if there is actually a nu command available
     if [[ -x `which nu 2>/dev/null` ]]; then
         # avoid spawning nu every time bash is started...
-        if [ -z $NU_STARTED ]; then
+        if [ -z $NU_STARTED ] || [ "$NU_STARTED" == "false" ]; then
             export NU_STARTED="true"
             exec nu
         fi

@@ -20,7 +20,15 @@
             "icon": "terminal-powershell"
         },
         "nushell": {
-            "path": "nu"
+            // Drop into nushell from bash so that we can get whatever
+            // environment vars have been setup from bash.
+            // This requires using the trick configured in chezmoi
+            // where running bash actually just runs nu
+            // unless you've already run nu at least once.
+            "path": "bash",
+            "env": {
+                "NU_STARTED": null
+            }
         }
     },
     "terminal.integrated.defaultProfile.linux": "nushell",

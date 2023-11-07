@@ -26,9 +26,9 @@
     pkgs.nerdfonts
     pkgs.librewolf
     pkgs.discord
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
+    pkgs.openscad
+    # prusa-slicer fails when built from nix for some reason, so we
+    # skip it here.
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

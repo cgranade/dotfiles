@@ -19,10 +19,13 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
+  nixpkgs.config.allowUnfree = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     pkgs.nerdfonts
+    pkgs.librewolf
+    pkgs.discord
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

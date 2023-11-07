@@ -70,6 +70,14 @@
     # EDITOR = "emacs";
   };
 
+  # We need to set XDG paths here and not in sessionVariables
+  # so that we can refer to their previous values.
+  # See https://unix.stackexchange.com/questions/310666/nix-desktop-files
+  # for why this works.
+  programs.bash.profileExtra = ''
+    export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:\"\$\{XDG_DATA_DIRS:-/usr/local/share/:/usr/share/\}\"
+  '';
+
   programs.carapace.enable = true;
 
   # Let Home Manager install and manage itself.

@@ -19,13 +19,11 @@
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  nixpkgs.config.allowUnfree = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
     pkgs.nerdfonts
     pkgs.librewolf
-    pkgs.discord
     pkgs.openscad
     # prusa-slicer fails when built from nix for some reason, so we
     # skip it here.

@@ -82,7 +82,11 @@
       . "$HOME/.cargo/env"
       # Set .desktop shortcuts.
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"''${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+    '';
+    bashrcExtra = ''      
       # Set up bash settings managed by chezmoi.
+      # Those settings should be moved to be
+      # directly in this file as soon as possible.
       . "$HOME/.bash_aliases"
     '';
   };

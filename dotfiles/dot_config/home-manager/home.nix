@@ -77,11 +77,24 @@
   # so that we can refer to their previous values.
   # See https://unix.stackexchange.com/questions/310666/nix-desktop-files
   # for why this works.
-  programs.bash.profileExtra = ''
-    export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:\"\$\{XDG_DATA_DIRS:-/usr/local/share/:/usr/share/\}\"
-  '';
+  programs.bash = {
+    enable = true;
+    profileExtra = ''
+      # Enable cargo.
+      . "$HOME/.cargo/env"
+      # Set .desktop shortcuts.
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"''${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+      # Set up bash settings managed by chezmoi.
+      . "$HOME/.bash_aliases"
+    '';
+  };
 
   programs.carapace.enable = true;
+  programs.carapace.enableBashIntegration = true;
+  programs.zoxide.enable = true;
+  programs.zoxide.enableBashIntegration = true;
+  programs.starship.enable = true;
+  programs.starship.enableBashIntegration = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -2,8 +2,6 @@
 # a re-login.
 PATH="$HOME/.cargo/bin:~$HOME/.dotnet/tools:$HOME/.local/bin:$PATH"
 eval "$(cat ~/.env.json | jq --raw-output 'to_entries | map(["export ", .["key"], "=", .["value"]] | join("")) | join("\n")')"
-eval "$(starship init bash)"
-eval "$(zoxide init bash)"
 
 # This is very far from an alias, but we can't put this in ~/.bashrc in a way that's portable across machines, so we
 # put delegation to nushell here.

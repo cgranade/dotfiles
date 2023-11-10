@@ -190,3 +190,5 @@ gaps inner 3px
 bar {
         status_command i3status
 }
+
+for_window [title="Desktop @ QRect.*"] kill; floating enable; border none

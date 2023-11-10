@@ -25,6 +25,10 @@
     pkgs.nerdfonts
     pkgs.librewolf
     pkgs.openscad
+
+    # Used for managing ssh agents in i3.
+    # See https://superuser.com/a/1596398.
+    pkgs.keychain
     # prusa-slicer fails when built from nix for some reason, so we
     # skip it here.
 
@@ -82,6 +86,9 @@
       . "$HOME/.cargo/env"
       # Set .desktop shortcuts.
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"''${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+
+      # Enable keychain (see home.nix for why)
+      eval $(keychain --eval --agents ssh --quick --quiet)
     '';
     bashrcExtra = ''      
       # Set up bash settings managed by chezmoi.

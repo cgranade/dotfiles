@@ -1,3 +1,7 @@
+include "%L"
+
+<Multi_key> <h> <n> <k> : "hugs and kisses" # Compose h n k
+
 ## Emoji #####################################################################
 
 <Multi_key> <less> <2> <3>          : "💕" U1F495

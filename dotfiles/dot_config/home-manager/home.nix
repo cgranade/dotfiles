@@ -25,6 +25,7 @@
     pkgs.nerdfonts
     pkgs.librewolf
     pkgs.openscad
+    pkgs.gh
 
     # Used for managing ssh agents in i3.
     # See https://superuser.com/a/1596398.

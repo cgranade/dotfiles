@@ -26,6 +26,7 @@
     pkgs.librewolf
     pkgs.openscad
     pkgs.gh
+    pkgs.typst
 
     # Used for managing ssh agents in i3.
     # See https://superuser.com/a/1596398.

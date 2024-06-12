@@ -15,7 +15,7 @@ export def "get instance secrets" [
     )
 }
 
-export def-env "use instance" [
+export def --env "use instance" [
     name: string
 ] {
     let entry = get instance secrets $name

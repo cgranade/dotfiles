@@ -1,6 +1,6 @@
 use "./utils.nu" *
 
-export extern-wrapped "show" [
+export def --wrapped "show" [
     --quiet (-q)
     --key-file (-k): string
     --no-password
